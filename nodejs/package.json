@@ -1,0 +1,19 @@
+{
+  "name": "pc-tv",
+  "version": "2.0.0",
+  "private": true,
+  "description": "PC-TV: local IPTV workbench. HLS proxy with Referer support, Vidio and Transmedia resolvers, M3U playlist management, LAN access.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check ../static/app.js",
+    "skills:install": "node ../scripts/install-skills.mjs"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "antislop-ai": "^3.2.30"
+  }
+}

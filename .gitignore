@@ -1,0 +1,23 @@
+# data user (playlist custom, state)
+data/playlists.json
+data/*.backup
+data/*.before-*.json
+data/vidio-auth.json
+data/vidio-test.log
+
+# log runtime
+*.log
+node_live.log
+server_live.log
+
+# node
+nodejs/node_modules/
+
+# backup / scratch
+*.bak-prev
+*.backup
+nul
+
+# local AI tooling
+.claude/
+.hermes/

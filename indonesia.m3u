@@ -1,0 +1,115 @@
+#EXTM3U
+# ===============================================================
+#  Indonesia FTA TV — Playlist preset PC-TV
+#  Sumber: situs/stream resmi masing-masing stasiun.
+#  Channel TVRI/Metro/Magna/RTV: tanpa header khusus.
+#  Channel MNC (RCTI/MNCTV/GTV/iNews): butuh Referer rctiplus.
+#  Ketersediaan Transmedia bergantung endpoint dan jaringan; geoblocking belum dipastikan.
+# ===============================================================
+
+#EXTINF:-1 tvg-id="TVRI.id" group-title="TVRI",TVRI Nasional
+https://ott-balancer.tvri.go.id/live/eds/Nasional/hls/Nasional.m3u8
+
+#EXTINF:-1 tvg-id="TVRISportHD.id" group-title="TVRI",TVRI Sport HD
+https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8
+
+#EXTINF:-1 tvg-id="TVRIWorld.id" group-title="TVRI",TVRI World
+https://ott-balancer.tvri.go.id/live/eds/TVRIWorld/hls/TVRIWorld.m3u8
+
+#EXTINF:-1 tvg-id="TVRIJabar.id" group-title="TVRI",TVRI Jawa Barat
+https://ott-balancer.tvri.go.id/live/eds/Jabar/hls/Jabar.m3u8
+
+#EXTINF:-1 tvg-id="MetroTV.id" group-title="Berita",Metro TV
+https://edge.medcom.id/live-edge/smil:metro.smil/playlist.m3u8
+
+#EXTINF:-1 tvg-id="MagnaChannel.id" group-title="Berita",Magna Channel
+https://edge.medcom.id/live-edge/smil:magna.smil/playlist.m3u8
+
+#EXTINF:-1 tvg-id="RajawaliTV.id" group-title="Umum",RTV
+https://rtvstream.rtv.co.id:4555/hls/rtv.m3u8
+
+#EXTINF:-1 tvg-id="RCTI.id" group-title="MNC",RCTI
+#EXTVLCOPT:http-referrer=https://www.rctiplus.com/
+https://allcutv.rctiplus.id/rcti-sdi.m3u8
+
+#EXTINF:-1 tvg-id="MNCTV.id" group-title="MNC",MNC TV
+#EXTVLCOPT:http-referrer=https://www.rctiplus.com/
+https://allcutv.rctiplus.id/mnctv-sdi.m3u8
+
+#EXTINF:-1 tvg-id="GTV.id" group-title="MNC",GTV
+#EXTVLCOPT:http-referrer=https://www.rctiplus.com/
+https://allcutv.rctiplus.id/gtv-sdi.m3u8
+
+#EXTINF:-1 tvg-id="iNews.id" group-title="Berita",iNews
+#EXTVLCOPT:http-referrer=https://www.rctiplus.com/
+https://allcutv.rctiplus.id/inews-sdi.m3u8
+
+
+
+#EXTINF:-1 tvg-id="CNNIndonesia.id" group-title="Transmedia",CNN Indonesia
+#EXTVLCOPT:http-referrer=https://www.cnnindonesia.com/
+https://video.detik.com/livecnn/smil:cnntv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="CNBCIndonesia.id" group-title="Transmedia",CNBC Indonesia
+#EXTVLCOPT:http-referrer=https://www.cnbcindonesia.com/
+https://video.detik.com/livecnbc/smil:cnbctv/playlist.m3u8
+
+# --- Vidio FTA (Indosiar group / Emtek) ---
+#EXTINF:-1 tvg-id="Indosiar.id" group-title="Vidio",Indosiar
+/vidio?id=205
+
+#EXTINF:-1 tvg-id="SCTV.id" group-title="Vidio",SCTV
+/vidio?id=204
+
+#EXTINF:-1 tvg-id="ANTV.id" group-title="Vidio",ANTV
+/vidio?id=782
+
+#EXTINF:-1 tvg-id="TVOne.id" group-title="Vidio",TVOne
+/vidio?id=783
+
+#EXTINF:-1 tvg-id="MetroTV.id" group-title="Vidio",Metro TV
+/vidio?id=777
+
+#EXTINF:-1 tvg-id="RTV2.id" group-title="Vidio",RTV
+/vidio?id=1561
+
+#EXTINF:-1 tvg-id="BTV.id" group-title="Vidio",BTV
+/vidio?id=6165
+
+#EXTINF:-1 tvg-id="Jaktv.id" group-title="Vidio",Jakarta TV
+/vidio?id=5415
+
+#EXTINF:-1 tvg-id="MagnaTV.id" group-title="Vidio",Magna TV
+/vidio?id=7230
+
+#EXTINF:-1 tvg-id="TVRI2.id" group-title="Vidio",TVRI
+/vidio?id=6441
+
+#EXTINF:-1 tvg-id="DAAITV.id" group-title="Vidio",DAAI TV
+/vidio?id=6482
+
+#EXTINF:-1 tvg-id="NusantaraTV.id" group-title="Vidio",Nusantara TV
+/vidio?id=7432
+
+#EXTINF:-1 tvg-id="Aljazeera.id" group-title="Vidio",Aljazeera English
+/vidio?id=6410
+
+#EXTINF:-1 tvg-id="CNA.id" group-title="Vidio",CNA
+/vidio?id=6411
+
+#EXTINF:-1 tvg-id="Euronews.id" group-title="Vidio",Euronews
+/vidio?id=6412
+
+#EXTINF:-1 tvg-id="Arirang.id" group-title="Vidio",Arirang TV
+/vidio?id=6784
+
+#EXTINF:-1 tvg-id="MakkahTV.id" group-title="Vidio",Makkah TV
+/vidio?id=6852
+
+#EXTINF:-1 tvg-id="DWEnglish.id" group-title="Vidio",DW English
+/vidio?id=5075
+
+#EXTINF:-1 group-title="Transmedia" tvg-id="TransTV.id",Trans TV
+/detik-sec?ch=transtv
+#EXTINF:-1 group-title="Transmedia" tvg-id="Trans7.id",Trans7
+/detik-sec?ch=trans7

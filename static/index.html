@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC-TV · TV Indonesia lokal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <h1 class="brand">PC-TV</h1>
+    <div class="search">
+      <label class="sr-only" for="q">Cari channel</label>
+      <input id="q" type="search" placeholder="Cari channel" autocomplete="off">
+    </div>
+    <div class="topbtns">
+      <button id="btnRefresh" type="button" class="btn ghost" aria-label="Muat ulang daftar channel">Muat ulang</button>
+      <button id="btnAdd" type="button" class="btn primary">Tambah sumber</button>
+    </div>
+  </header>
+
+  <div id="layout">
+    <nav id="sidebar" aria-label="Grup dan sumber channel">
+      <div class="railhead">Grup</div>
+      <div id="groupList"></div>
+      <div class="railhead">Sumber</div>
+      <div id="sourceList"></div>
+    </nav>
+
+    <main id="main">
+      <section id="playerPane" aria-label="Pemutar">
+        <div id="stage">
+          <video id="tv" controls playsinline width="1280" height="720"></video>
+          <div id="stageEmpty">Pilih channel di bawah untuk mulai menonton.</div>
+        </div>
+        <div id="nowBar">
+          <span id="nowDot" class="dot" hidden aria-hidden="true"></span>
+          <div id="nowText">
+            <b id="nowName">Belum ada channel</b>
+            <span id="nowProg"></span>
+          </div>
+          <span id="nowStat" class="stat"></span>
+        </div>
+        <p id="err" role="alert" hidden></p>
+      </section>
+
+      <section id="listPane" aria-label="Daftar channel">
+        <div class="listhead">
+          <span id="listCount">0 channel</span>
+          <span id="listHint"></span>
+        </div>
+        <div id="grid"></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div id="overlay" class="hidden">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h2 id="modalTitle">Tambah sumber</h2>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" data-t="m3u" type="button">Playlist M3U</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="url" type="button">Satu URL</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="hot" type="button">Preset</button>
+    </div>
+
+    <div class="tabbody" data-t="m3u">
+      <label for="m3uText">Isi file .m3u / .m3u8, atau URL daftar channel</label>
+      <textarea id="m3uText" rows="7" placeholder="#EXTM3U&#10;#EXTINF:-1 group-title=&quot;Lokal&quot;,Channel&#10;https://example.com/stream.m3u8"></textarea>
+      <label for="m3uName">Nama sumber (opsional)</label>
+      <input id="m3uName" type="text" placeholder="Playlist lokal">
+      <div class="modalactions"><button id="m3uSubmit" class="btn primary" type="button">Tambah playlist</button></div>
+    </div>
+
+    <div class="tabbody hidden" data-t="url">
+      <label for="urlInput">URL stream .m3u8 / .mp4</label>
+      <input id="urlInput" type="url" placeholder="https://">
+      <label for="urlName">Nama channel</label>
+      <input id="urlName" type="text" placeholder="Channel X">
+      <label for="urlPage">Referer halaman resmi (opsional)</label>
+      <input id="urlPage" type="url" placeholder="https://www.rctiplus.com/">
+      <p class="hint">Beberapa stasiun menolak permintaan tanpa Referer. Isi kalau channel menampilkan 403.</p>
+      <div class="modalactions"><button id="urlSubmit" class="btn primary" type="button">Tambah channel</button></div>
+    </div>
+
+    <div class="tabbody hidden" data-t="hot">
+      <p class="hint">Channel yang endpoint-nya sudah diuji dari mesin ini.</p>
+      <div id="hotList"></div>
+    </div>
+
+    <div class="modalfoot">
+      <button id="mClose" class="btn ghost" type="button">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="hidden" role="status" aria-live="polite"></div>
+<script src="hls.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
